@@ -99,7 +99,7 @@ func spawn(entityManager: EntityManager,eventManager: EventManager, query: Query
 
 Define resources that are globally accessible by systems.
 
-```rust
+```swift
 class GameState : Component{
     public enum State {
         case playing
@@ -286,7 +286,7 @@ world.entityManager.printAllArchetypes()
 
 ### Running the Project
 
-To run the project, use Cargo:
+To run the project:
 
 ```bash
 swift run
