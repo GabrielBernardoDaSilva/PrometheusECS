@@ -4,6 +4,11 @@
       <img src='https://raw.githubusercontent.com/GabrielBernardoDaSilva/PrometheusECS/master/prometheus-ecs.png' alt='PrometheuECS'/>
 </p>
 
+## Description
+- **Improve game performance**: By decoupling game logic from the representation of game objects, ECS can significantly enhance performance through efficient data organization and optimized component updates.
+Increase code reusability: Components can be easily reused across different entities, promoting modularity and reducing code duplication.
+- **Simplify game development**: The ECS architecture makes it easier to manage and maintain complex game systems, as game logic is organized in a more structured and predictable way.
+
 ## Features
 
 - **Entity Creation**: Easily create entities and attach components to them.
