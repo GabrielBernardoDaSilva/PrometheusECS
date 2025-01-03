@@ -17,8 +17,8 @@ public final class ResourceManager {
 
 
 extension ResourceManager {
-    public func createResource<T: Component>(_ component: T) {
-        let resource = Resource(data: component)
+    public func createResource<T: Resource>(_ resourceData: T) {
+        let resource = ResourceContainer(data: resourceData)
         _resources[resource.signature] = resource
     }
     

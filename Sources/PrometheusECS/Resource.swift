@@ -10,7 +10,10 @@ public protocol ResourceProtocol: SignatureProvider {
     var data: DataType { get }
 }
 
-public final class Resource<T: Component> : ResourceProtocol {
+public protocol Resource: SignatureProvider {}
+
+
+public final class ResourceContainer<T: Resource> : ResourceProtocol {
     public typealias DataType = T
     
     private var _data: T
@@ -25,9 +28,9 @@ public final class Resource<T: Component> : ResourceProtocol {
 }
 
 
-extension Resource : SystemParams{
-    public static func getParam(_ world: World) -> Resource<DataType>? {
-        world.resourceManager.getResource(Resource<DataType>.self)
+extension ResourceContainer : SystemParams{
+    public static func getParam(_ world: World) -> ResourceContainer<DataType>? {
+        world.resourceManager.getResource(ResourceContainer<DataType>.self)
     }
     
     
