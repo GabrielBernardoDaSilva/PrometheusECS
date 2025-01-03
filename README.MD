@@ -21,7 +21,7 @@ Increase code reusability: Components can be easily reused across different enti
 
 ## Example
 
-Demonstrates how to use the `Prometheus` library to create an Entity Component System (ECS) in Swift. The example includes creating components, querying entities, and setting up systems to interact with those components.
+Demonstrates how to use the `Prometheus` library to create an Entity Component System (ECS) in Swift. The example includes creating components, querying entities, and setting up systems to interact xqwith those components.
 
 ## Setup
 
