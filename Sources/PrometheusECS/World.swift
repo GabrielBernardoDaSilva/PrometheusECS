@@ -5,7 +5,7 @@ public typealias IdentifierUUID = UUID
 
 final public class World {
     
-    init() {}
+    public init() {}
 
     internal var plugins: [PluginBuilder] = []
 
