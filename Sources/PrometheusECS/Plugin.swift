@@ -14,4 +14,8 @@ extension World {
     public func buildPlugins() throws {
         try plugins.forEach { try $0.build(self)}
     }
+    
+    public func addPlugin(_ plugin: PluginBuilder) {
+        plugins.append(plugin)
+    }
 }
