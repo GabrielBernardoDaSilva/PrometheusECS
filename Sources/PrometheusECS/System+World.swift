@@ -6,18 +6,18 @@
 //
 
 extension World {
-    private func startSystems() throws {
+    public func startSystems() throws {
         systemManager.start()
         try systemManager.startFunctional()
     }
     
-    private func updateSystems() throws {
+    public func updateSystems() throws {
         systemManager.update()
         try systemManager.updateFunctional()
         coroutineManager.updateAllCoroutines()
     }
     
-    private func disposeSystems() throws{
+    public func disposeSystems() throws{
         systemManager.dispose()
         try systemManager.disposeFunctional()
     }
