@@ -11,7 +11,7 @@ extension World {
     }
     
     @discardableResult
-    func removeResource<R: ResourceProtocol>() -> R? {
+    public func removeResource<R: ResourceProtocol>() -> R? {
         return resourceManager.removeResource()
     }
     

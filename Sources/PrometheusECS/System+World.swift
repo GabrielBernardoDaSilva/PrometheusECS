@@ -48,7 +48,7 @@ extension World {
 
 
 extension World {
-    func addSystemFunction<each P: SystemParams>(schedule: SystemFunctionExecution, _ systemFunction: @escaping (repeat each P) throws -> ()) throws where repeat each P: SystemParams {
+    public func addSystemFunction<each P: SystemParams>(schedule: SystemFunctionExecution, _ systemFunction: @escaping (repeat each P) throws -> ()) throws where repeat each P: SystemParams {
         let function = try SystemFunction<repeat each P>(execute: systemFunction, world: self)
         systemManager.addSystemFunctional(schedule: schedule, action: function)
     }
