@@ -60,6 +60,15 @@ public final class EntityManager {
         try addEntity(componentList: components)
     }
     
+    public func getComponentFromEntity(entity: Entity, componentType: Component.Type) throws(ArchetypeError) -> Component? {
+        guard let archetypeIndex = _archetypes.firstIndex(where: { $0.entities.contains(entity) }) else {
+            throw .entityNotFound
+        }
+        
+        let entityIndex = _archetypes[archetypeIndex].entities.firstIndex(of: entity)!
+        return _archetypes[archetypeIndex].migrateEntity(entityIndex).1.first(where: { $0.signature == componentType.signature })
+    }
+    
     public func addComponentToEntity<T: Component>(entity: Entity, component: T) throws(ArchetypeError) {
         guard let archetypeIndex = _archetypes.firstIndex(where: { $0.entities.contains(entity) }) else {
             throw .entityNotFound
