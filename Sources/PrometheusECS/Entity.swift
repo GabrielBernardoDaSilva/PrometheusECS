@@ -18,12 +18,12 @@ public class Entity: Component {
         self._location = location
     }
     
-    var id: Int {
+    public var id: Int {
         _id
     }
     
     
-    var location: Int {
+    public var location: Int {
         set {
             _location = newValue
         }

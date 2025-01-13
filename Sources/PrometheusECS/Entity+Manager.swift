@@ -10,7 +10,7 @@ public final class EntityManager {
     private unowned var _world: World
     private var _archetypes: [Archetype] = []
     private var _entities: [Entity] = []
-    
+    private var _entityId = 0
     
     public var archetypes: [Archetype] {
         _archetypes
@@ -36,16 +36,18 @@ public final class EntityManager {
         if let founded = findArchetype(in: types) {
             let location = founded.1
             let archetype = founded.0
-            let entity = Entity(id: _entities.count, location: location)
+            let entity = Entity(id: _entityId, location: location)
             archetype.addEntity(entity: entity, components: components)
         } else {
             let location = _archetypes.count
-            let entity = Entity(id: _entities.count, location: location)
+            let entity = Entity(id: _entityId, location: location)
             let  archetype = createArchetype(entity: entity, components: components)
             _archetypes.append(archetype)
             _entities.append(entity)
             
         }
+        
+        _entityId += 1
     }
     
     private func createArchetype(entity: Entity, components: [Component]) ->  Archetype {
